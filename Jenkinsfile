@@ -42,7 +42,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarScanner'; // Name of the SonarQube Scanner you created in "Global Tool Configuration" section
                     withSonarQubeEnv() {
-                        powershell "${scannerHome}/bin/sonar-scanner"
+                        powershell "${scannerHome}/bin/sonar-scanner -X"
                     }
                 }
             }
