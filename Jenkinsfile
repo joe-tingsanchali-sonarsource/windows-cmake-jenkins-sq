@@ -42,10 +42,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarScanner'; // Name of the SonarQube Scanner you created in "Global Tool Configuration" section
                     withSonarQubeEnv('ee97win') {
-                        powershell '''
-                            Get-ChildItem Env:
-                            ${scannerHome}/bin/sonar-scanner -X
-                        '''
+                        powershell "${scannerHome}\bin\sonar-scanner.bat -X"
                     }
                 }
             }
